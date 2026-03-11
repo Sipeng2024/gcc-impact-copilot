@@ -1,19 +1,27 @@
 # GCC Impact Copilot
 
-GCC Impact Copilot is an agent-ready monitoring tool for public-goods grant portfolios. It turns scattered public signals—GitHub activity, release cadence, homepage availability, and declared milestones—into a compact health report that reviewers can inspect in minutes instead of waiting for quarterly manual updates.
+GCC Impact Copilot is a reviewer-facing impact review workbench for public-goods grant portfolios. It turns scattered public signals—GitHub activity, release cadence, homepage availability, and declared milestones—into structured review input that a grant manager can inspect, verify, and follow up on.
+
+## Positioning
+
+Impact Copilot is **for reviewers, not crawlers**.
+
+Its job is not to be a universal evidence collection engine. Its job is to help a human reviewer answer:
+
+- What public evidence do we currently have?
+- How does that evidence map to expected milestones?
+- What looks healthy, what needs follow-up, and why?
+- Which grants should a human review next?
+
+If a broader portfolio crawler exists in the future, that system should be an upstream input to Impact Copilot, not part of the same product boundary.
 
 ## Why this matters
 
-Grant programs often rely on founder updates, ad-hoc check-ins, and spreadsheet chasing. That makes impact evaluation late, inconsistent, and hard to audit. GCC Impact Copilot creates a lightweight, repeatable monitoring layer that helps reviewers answer:
-
-- Is the project still active?
-- Are there public delivery signals we can verify ourselves?
-- Which grants need follow-up now instead of at quarter end?
-- Which portfolio projects deserve deeper manual review?
+Grant programs often rely on founder updates, ad-hoc check-ins, and spreadsheet chasing. That makes impact evaluation late, inconsistent, and hard to audit. GCC Impact Copilot creates a lightweight review workflow that helps reviewers move from scattered evidence to structured follow-up.
 
 ## MVP scope
 
-This prototype focuses on public signals only:
+This prototype focuses on reviewer-visible signals:
 
 - GitHub repository freshness (`pushed_at`)
 - GitHub releases
@@ -21,8 +29,9 @@ This prototype focuses on public signals only:
 - GitHub stars as a rough community signal
 - Homepage reachability
 - Configured milestones / expected outputs
+- Follow-up risks that a human reviewer should inspect
 
-The output is a JSON report plus a readable Markdown report that can be posted into GitHub, Notion, Telegram, or a dashboard.
+The output is a JSON report plus a readable Markdown report that can be posted into GitHub, Notion, Telegram, or a review dashboard.
 
 ## Quickstart
 
@@ -47,28 +56,28 @@ After running the CLI, you will get:
 - `output/report.json`
 - `output/report.md`
 
-## Agent workflow
+## Review workflow
 
-1. Load a portfolio manifest.
-2. Fetch public signals from GitHub and project homepages.
-3. Score each project into `healthy`, `watch`, or `at-risk`.
-4. Emit a compact report with follow-up risks.
-5. Hand the flagged items to a human reviewer or another agent.
+1. Load a portfolio manifest with project context and expected milestones.
+2. Read public evidence from GitHub and project homepages.
+3. Map the visible signals into a compact status summary.
+4. Surface explicit risks and missing evidence.
+5. Hand the result to a human reviewer for follow-up, override, or escalation.
 
 ## Why it fits GCC
 
 - Real GCC problem: impact evaluation is repetitive and easy to delay.
-- Agent-native: the tool gathers, summarizes, and prioritizes without pretending to replace human judgment.
-- Public goods friendly: any DAO, foundation, or grants program can reuse the same workflow.
-- Auditable: every score is backed by explicit public signals.
+- Reviewer-centric: it supports grant managers instead of pretending to replace them.
+- Public goods friendly: any DAO, foundation, or grants program can reuse the same review workflow.
+- Auditable: every judgment should be backed by explicit public evidence.
 
 ## Next steps
 
-- Add RSS/blog/news ingestion
-- Add chain activity adapters for wallet-based milestones
-- Add project-specific rubrics instead of one global scorecard
-- Add weekly digest automation
-- Add a reviewer UI for comments and overrides
+- Add evidence trace links for every signal
+- Add milestone-to-evidence mapping
+- Add reviewer comments, overrides, and follow-up states
+- Add weekly digest automation for human review queues
+- Keep large-scale crawling outside this repo's main product boundary
 
 ## License
 
