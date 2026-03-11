@@ -1,2 +1,0 @@
-[console_scripts]
-gcc-impact = gcc_impact_copilot.cli:main
