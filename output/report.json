@@ -23,32 +23,181 @@
         {
           "kind": "homepage_ok",
           "value": true,
-          "note": "Homepage returned HTTP 200"
+          "note": "Homepage returned HTTP 200",
+          "rationale": "Homepage reachability is a minimal public evidence check for whether reviewers can inspect project materials.",
+          "evidence_refs": [
+            {
+              "label": "homepage",
+              "source": "web",
+              "ref": "https://vyperlang.org/",
+              "note": "Homepage returned HTTP 200"
+            }
+          ]
         },
         {
           "kind": "milestone_count",
           "value": 3,
-          "note": "3 declared milestones in config"
+          "note": "3 declared milestones in config",
+          "rationale": "Declared milestones define what a reviewer expects to verify later.",
+          "evidence_refs": [
+            {
+              "label": "milestone_1",
+              "source": "portfolio_manifest",
+              "ref": "Track release cadence",
+              "note": "Declared milestone in portfolio manifest"
+            },
+            {
+              "label": "milestone_2",
+              "source": "portfolio_manifest",
+              "ref": "Track homepage availability",
+              "note": "Declared milestone in portfolio manifest"
+            },
+            {
+              "label": "milestone_3",
+              "source": "portfolio_manifest",
+              "ref": "Track GitHub activity",
+              "note": "Declared milestone in portfolio manifest"
+            }
+          ]
         },
         {
           "kind": "push_days",
           "value": 1,
-          "note": "Last push 1 days ago"
+          "note": "Last push 1 days ago",
+          "rationale": "Recent pushes are a direct public signal of ongoing delivery activity.",
+          "evidence_refs": [
+            {
+              "label": "repo.pushed_at",
+              "source": "github_api",
+              "ref": "2026-03-09T19:22:21Z",
+              "note": "Latest repository push timestamp"
+            },
+            {
+              "label": "github_repo",
+              "source": "github",
+              "ref": "vyperlang/vyper",
+              "note": "GitHub repository reference"
+            }
+          ]
         },
         {
           "kind": "stars",
           "value": 5172,
-          "note": "GitHub stars: 5172"
+          "note": "GitHub stars: 5172",
+          "rationale": "Stars are a rough proxy for external visibility, not proof of delivery.",
+          "evidence_refs": [
+            {
+              "label": "repo.stargazers_count",
+              "source": "github_api",
+              "ref": "5172",
+              "note": "Repository star count"
+            },
+            {
+              "label": "github_repo",
+              "source": "github",
+              "ref": "vyperlang/vyper",
+              "note": "GitHub repository reference"
+            }
+          ]
         },
         {
           "kind": "open_issues",
           "value": 590,
-          "note": "Open issues: 590"
+          "note": "Open issues: 590",
+          "rationale": "Open issue load is a weak maintainability signal and should be interpreted cautiously.",
+          "evidence_refs": [
+            {
+              "label": "repo.open_issues_count",
+              "source": "github_api",
+              "ref": "590",
+              "note": "Repository open issues count"
+            },
+            {
+              "label": "github_repo",
+              "source": "github",
+              "ref": "vyperlang/vyper/issues",
+              "note": "GitHub repository reference"
+            }
+          ]
         },
         {
           "kind": "release_days",
           "value": 265,
-          "note": "Latest release 265 days ago"
+          "note": "Latest release 265 days ago",
+          "rationale": "Recent releases are a stronger delivery signal than repository stars or issue counts.",
+          "evidence_refs": [
+            {
+              "label": "release.published_at",
+              "source": "github_api",
+              "ref": "2025-06-18T20:09:23Z",
+              "note": "Latest release: v0.4.3  (\"Buttermilk Racer\")"
+            },
+            {
+              "label": "github_repo",
+              "source": "github",
+              "ref": "vyperlang/vyper/releases",
+              "note": "GitHub repository reference"
+            }
+          ]
+        }
+      ],
+      "milestone_assessments": [
+        {
+          "milestone": "Track release cadence",
+          "status": "supported-by-evidence",
+          "rationale": "A public GitHub release exists and can be reviewed against this milestone.",
+          "evidence_refs": [
+            {
+              "label": "declared_milestone",
+              "source": "portfolio_manifest",
+              "ref": "Track release cadence",
+              "note": "Expected outcome from project configuration"
+            },
+            {
+              "label": "supporting_release",
+              "source": "github_api",
+              "ref": "https://github.com/vyperlang/vyper/releases/tag/v0.4.3",
+              "note": "Latest release page for Vyper"
+            }
+          ]
+        },
+        {
+          "milestone": "Track homepage availability",
+          "status": "supported-by-evidence",
+          "rationale": "The homepage is publicly reachable, so reviewers can inspect this deliverable directly.",
+          "evidence_refs": [
+            {
+              "label": "declared_milestone",
+              "source": "portfolio_manifest",
+              "ref": "Track homepage availability",
+              "note": "Expected outcome from project configuration"
+            },
+            {
+              "label": "homepage",
+              "source": "web",
+              "ref": "https://vyperlang.org/",
+              "note": "Homepage returned HTTP 200"
+            }
+          ]
+        },
+        {
+          "milestone": "Track GitHub activity",
+          "status": "supported-by-evidence",
+          "rationale": "Recent repository activity exists and can be inspected directly by reviewers.",
+          "evidence_refs": [
+            {
+              "label": "declared_milestone",
+              "source": "portfolio_manifest",
+              "ref": "Track GitHub activity",
+              "note": "Expected outcome from project configuration"
+            },
+            {
+              "label": "github_repo",
+              "source": "github",
+              "ref": "vyperlang/vyper",
+              "note": "GitHub repository reference"
+            }
+          ]
         }
       ],
       "risks": [],
@@ -76,16 +225,73 @@
         {
           "kind": "homepage_ok",
           "value": true,
-          "note": "Homepage returned HTTP 200"
+          "note": "Homepage returned HTTP 200",
+          "rationale": "Homepage reachability is a minimal public evidence check for whether reviewers can inspect project materials.",
+          "evidence_refs": [
+            {
+              "label": "homepage",
+              "source": "web",
+              "ref": "https://snark.express/",
+              "note": "Homepage returned HTTP 200"
+            }
+          ]
         },
         {
           "kind": "milestone_count",
           "value": 2,
-          "note": "2 declared milestones in config"
+          "note": "2 declared milestones in config",
+          "rationale": "Declared milestones define what a reviewer expects to verify later.",
+          "evidence_refs": [
+            {
+              "label": "milestone_1",
+              "source": "portfolio_manifest",
+              "ref": "Track site uptime",
+              "note": "Declared milestone in portfolio manifest"
+            },
+            {
+              "label": "milestone_2",
+              "source": "portfolio_manifest",
+              "ref": "Track publication freshness",
+              "note": "Declared milestone in portfolio manifest"
+            }
+          ]
+        }
+      ],
+      "milestone_assessments": [
+        {
+          "milestone": "Track site uptime",
+          "status": "needs-review",
+          "rationale": "This milestone is only weakly mapped because the MVP uses generic public signals instead of milestone-specific evidence.",
+          "evidence_refs": [
+            {
+              "label": "declared_milestone",
+              "source": "portfolio_manifest",
+              "ref": "Track site uptime",
+              "note": "Expected outcome from project configuration"
+            }
+          ]
+        },
+        {
+          "milestone": "Track publication freshness",
+          "status": "needs-review",
+          "rationale": "This milestone is only weakly mapped because the MVP uses generic public signals instead of milestone-specific evidence.",
+          "evidence_refs": [
+            {
+              "label": "declared_milestone",
+              "source": "portfolio_manifest",
+              "ref": "Track publication freshness",
+              "note": "Expected outcome from project configuration"
+            }
+          ]
         }
       ],
       "risks": [
-        "No GitHub repository linked"
+        {
+          "level": "high",
+          "message": "No GitHub repository linked",
+          "rationale": "A reviewer-facing workbench loses most evidence trace value without a repository source.",
+          "evidence_refs": []
+        }
       ],
       "summary": "SnarkExpress has weak public signals and likely needs follow-up."
     },
@@ -111,16 +317,73 @@
         {
           "kind": "homepage_ok",
           "value": true,
-          "note": "Homepage returned HTTP 200"
+          "note": "Homepage returned HTTP 200",
+          "rationale": "Homepage reachability is a minimal public evidence check for whether reviewers can inspect project materials.",
+          "evidence_refs": [
+            {
+              "label": "homepage",
+              "source": "web",
+              "ref": "https://primuslabs.xyz/",
+              "note": "Homepage returned HTTP 200"
+            }
+          ]
         },
         {
           "kind": "milestone_count",
           "value": 2,
-          "note": "2 declared milestones in config"
+          "note": "2 declared milestones in config",
+          "rationale": "Declared milestones define what a reviewer expects to verify later.",
+          "evidence_refs": [
+            {
+              "label": "milestone_1",
+              "source": "portfolio_manifest",
+              "ref": "Track site uptime",
+              "note": "Declared milestone in portfolio manifest"
+            },
+            {
+              "label": "milestone_2",
+              "source": "portfolio_manifest",
+              "ref": "Track public updates",
+              "note": "Declared milestone in portfolio manifest"
+            }
+          ]
+        }
+      ],
+      "milestone_assessments": [
+        {
+          "milestone": "Track site uptime",
+          "status": "needs-review",
+          "rationale": "This milestone is only weakly mapped because the MVP uses generic public signals instead of milestone-specific evidence.",
+          "evidence_refs": [
+            {
+              "label": "declared_milestone",
+              "source": "portfolio_manifest",
+              "ref": "Track site uptime",
+              "note": "Expected outcome from project configuration"
+            }
+          ]
+        },
+        {
+          "milestone": "Track public updates",
+          "status": "needs-review",
+          "rationale": "This milestone is only weakly mapped because the MVP uses generic public signals instead of milestone-specific evidence.",
+          "evidence_refs": [
+            {
+              "label": "declared_milestone",
+              "source": "portfolio_manifest",
+              "ref": "Track public updates",
+              "note": "Expected outcome from project configuration"
+            }
+          ]
         }
       ],
       "risks": [
-        "No GitHub repository linked"
+        {
+          "level": "high",
+          "message": "No GitHub repository linked",
+          "rationale": "A reviewer-facing workbench loses most evidence trace value without a repository source.",
+          "evidence_refs": []
+        }
       ],
       "summary": "Primus has weak public signals and likely needs follow-up."
     }

@@ -30,8 +30,46 @@ This prototype focuses on reviewer-visible signals:
 - Homepage reachability
 - Configured milestones / expected outputs
 - Follow-up risks that a human reviewer should inspect
+- Evidence trace for every visible judgment
 
 The output is a JSON report plus a readable Markdown report that can be posted into GitHub, Notion, Telegram, or a review dashboard.
+
+## Evidence trace shape
+
+The core rule is simple: **every judgment should point back to explicit public evidence**.
+
+Each report now carries:
+
+- `signals`: reviewer-visible observations plus rationale and evidence references
+- `milestone_assessments`: milestone-by-milestone mapping with supporting evidence
+- `risks`: flagged follow-up items with explicit reasons and evidence
+
+Example shape:
+
+```json
+{
+  "kind": "release_days",
+  "value": 265,
+  "note": "Latest release 265 days ago",
+  "rationale": "Recent releases are a stronger delivery signal than repository stars or issue counts.",
+  "evidence_refs": [
+    {
+      "label": "release.published_at",
+      "source": "github_api",
+      "ref": "2025-06-19T10:12:00Z",
+      "note": "Latest release: v0.4.2"
+    },
+    {
+      "label": "github_repo",
+      "source": "github",
+      "ref": "vyperlang/vyper/releases",
+      "note": "GitHub repository reference"
+    }
+  ]
+}
+```
+
+This keeps the tool anchored as a review workbench instead of a black-box summarizer.
 
 ## Quickstart
 
@@ -61,8 +99,9 @@ After running the CLI, you will get:
 1. Load a portfolio manifest with project context and expected milestones.
 2. Read public evidence from GitHub and project homepages.
 3. Map the visible signals into a compact status summary.
-4. Surface explicit risks and missing evidence.
-5. Hand the result to a human reviewer for follow-up, override, or escalation.
+4. Attach evidence trace to every visible judgment.
+5. Surface explicit risks and missing evidence.
+6. Hand the result to a human reviewer for follow-up, override, or escalation.
 
 ## Why it fits GCC
 
@@ -74,7 +113,7 @@ After running the CLI, you will get:
 ## Next steps
 
 - Add evidence trace links for every signal
-- Add milestone-to-evidence mapping
+- Add milestone-to-evidence mapping beyond simple MVP heuristics
 - Add reviewer comments, overrides, and follow-up states
 - Add weekly digest automation for human review queues
 - Keep large-scale crawling outside this repo's main product boundary

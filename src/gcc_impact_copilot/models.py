@@ -15,10 +15,36 @@ class Project:
 
 
 @dataclass(slots=True)
+class EvidenceRef:
+    label: str
+    source: str
+    ref: str
+    note: str
+
+
+@dataclass(slots=True)
 class Signal:
     kind: str
     value: Any
     note: str
+    rationale: str
+    evidence_refs: list[EvidenceRef] = field(default_factory=list)
+
+
+@dataclass(slots=True)
+class MilestoneAssessment:
+    milestone: str
+    status: str
+    rationale: str
+    evidence_refs: list[EvidenceRef] = field(default_factory=list)
+
+
+@dataclass(slots=True)
+class Risk:
+    level: str
+    message: str
+    rationale: str
+    evidence_refs: list[EvidenceRef] = field(default_factory=list)
 
 
 @dataclass(slots=True)
@@ -27,5 +53,6 @@ class ProjectReport:
     score: int
     status: str
     signals: list[Signal]
-    risks: list[str]
+    milestone_assessments: list[MilestoneAssessment]
+    risks: list[Risk]
     summary: str
