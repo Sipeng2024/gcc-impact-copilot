@@ -1,0 +1,36 @@
+{
+  "projects": [
+    {
+      "name": "Vyper",
+      "repo": "vyperlang/vyper",
+      "homepage": "https://vyperlang.org/",
+      "description": "Pythonic smart contract language for the EVM.",
+      "tags": ["gcc", "open-source", "language"],
+      "milestones": [
+        "Track release cadence",
+        "Track homepage availability",
+        "Track GitHub activity"
+      ]
+    },
+    {
+      "name": "SnarkExpress",
+      "homepage": "https://snark.express/",
+      "description": "zkSNARKs research aggregation platform.",
+      "tags": ["gcc", "research", "content"],
+      "milestones": [
+        "Track site uptime",
+        "Track publication freshness"
+      ]
+    },
+    {
+      "name": "Primus",
+      "homepage": "https://primuslabs.xyz/",
+      "description": "Privacy data infrastructure for Web3.",
+      "tags": ["gcc", "privacy", "infrastructure"],
+      "milestones": [
+        "Track site uptime",
+        "Track public updates"
+      ]
+    }
+  ]
+}

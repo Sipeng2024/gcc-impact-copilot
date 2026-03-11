@@ -1,0 +1,128 @@
+{
+  "reports": [
+    {
+      "project": {
+        "name": "Vyper",
+        "repo": "vyperlang/vyper",
+        "homepage": "https://vyperlang.org/",
+        "description": "Pythonic smart contract language for the EVM.",
+        "tags": [
+          "gcc",
+          "open-source",
+          "language"
+        ],
+        "milestones": [
+          "Track release cadence",
+          "Track homepage availability",
+          "Track GitHub activity"
+        ]
+      },
+      "score": 55,
+      "status": "watch",
+      "signals": [
+        {
+          "kind": "homepage_ok",
+          "value": true,
+          "note": "Homepage returned HTTP 200"
+        },
+        {
+          "kind": "milestone_count",
+          "value": 3,
+          "note": "3 declared milestones in config"
+        },
+        {
+          "kind": "push_days",
+          "value": 1,
+          "note": "Last push 1 days ago"
+        },
+        {
+          "kind": "stars",
+          "value": 5172,
+          "note": "GitHub stars: 5172"
+        },
+        {
+          "kind": "open_issues",
+          "value": 590,
+          "note": "Open issues: 590"
+        },
+        {
+          "kind": "release_days",
+          "value": 265,
+          "note": "Latest release 265 days ago"
+        }
+      ],
+      "risks": [],
+      "summary": "Vyper has mixed signals and should stay on the watchlist."
+    },
+    {
+      "project": {
+        "name": "SnarkExpress",
+        "repo": null,
+        "homepage": "https://snark.express/",
+        "description": "zkSNARKs research aggregation platform.",
+        "tags": [
+          "gcc",
+          "research",
+          "content"
+        ],
+        "milestones": [
+          "Track site uptime",
+          "Track publication freshness"
+        ]
+      },
+      "score": 14,
+      "status": "at-risk",
+      "signals": [
+        {
+          "kind": "homepage_ok",
+          "value": true,
+          "note": "Homepage returned HTTP 200"
+        },
+        {
+          "kind": "milestone_count",
+          "value": 2,
+          "note": "2 declared milestones in config"
+        }
+      ],
+      "risks": [
+        "No GitHub repository linked"
+      ],
+      "summary": "SnarkExpress has weak public signals and likely needs follow-up."
+    },
+    {
+      "project": {
+        "name": "Primus",
+        "repo": null,
+        "homepage": "https://primuslabs.xyz/",
+        "description": "Privacy data infrastructure for Web3.",
+        "tags": [
+          "gcc",
+          "privacy",
+          "infrastructure"
+        ],
+        "milestones": [
+          "Track site uptime",
+          "Track public updates"
+        ]
+      },
+      "score": 14,
+      "status": "at-risk",
+      "signals": [
+        {
+          "kind": "homepage_ok",
+          "value": true,
+          "note": "Homepage returned HTTP 200"
+        },
+        {
+          "kind": "milestone_count",
+          "value": 2,
+          "note": "2 declared milestones in config"
+        }
+      ],
+      "risks": [
+        "No GitHub repository linked"
+      ],
+      "summary": "Primus has weak public signals and likely needs follow-up."
+    }
+  ]
+}
