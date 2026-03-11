@@ -16,10 +16,10 @@ GCC 这类公共物品资助体系在 impact evaluation 上会天然遇到几个
 当前原型采用一个可扩展的 agent workflow：首先读取 portfolio manifest（项目名称、GitHub repo、官网、预期里程碑等）；然后通过 GitHub API 拉取公开信号，包括最近 push 时间、release 发布时间、open issues 数量、stars 等；同时检查官网可访问性，并把声明的 milestones 纳入上下文；最后使用一套显式的评分规则生成 JSON 报告和 Markdown 报告，并输出 healthy / watch / at-risk 状态和 follow-up risk 列表。现阶段它是一个可直接运行的 CLI 原型，适合作为 GCC 内部 agent 的“观测引擎”。下一步会扩展到 RSS / blog / X / 链上地址 / milestone evidence adapter，并接入自动周报、reviewer override 和 evidence links。技术上刻意保持可审计：每个分数都能追溯到具体的公开信号，避免黑箱判断。
 
 ## 代码仓库链接
-https://github.com/SipengXie2024/gcc-impact-copilot
+https://github.com/Sipeng2024/gcc-impact-copilot
 
 ## Demo 视频链接
-https://github.com/SipengXie2024/gcc-impact-copilot/blob/main/DEMO_WALKTHROUGH.md
+https://github.com/Sipeng2024/gcc-impact-copilot/blob/main/DEMO_WALKTHROUGH.md
 
 ## 公共物品属性
 这个项目天然适合开放和复用。它不依赖 GCC 私有数据，核心设计就是围绕公开信号做 impact monitoring，因此任何 grant DAO、基金会、公共物品社区、黑客松资助计划都可以复用相同的工作流。项目将以 MIT License 开源，评分逻辑、数据源适配器、报告模板都可扩展；社区可以根据不同项目类型定义自己的 rubric，而不是绑定单一组织。换句话说，这不是只给 GCC 的内部小工具，而是一类 grant portfolio observability 工具的开源起点。
